@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tip calculator</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'josefin sans', sans-serif;
+
+    }
+
+
+    main {
+      height: auto;
+      background-color: blueviolet;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+
+    div {
+      max-width: 500px;
+      height: auto;
+      background-color: cyan;
+      padding: 50px;
+      box-shadow: 1px 1px 15px 3px #2d2d2d;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+      text-shadow: 1px 2px 1px whitesmoke;
+      text-transform: capitalize;
+
+
+    }
+
+    label {
+      display: block;
+
+      margin-top: 40px;
+    }
+
+
+    input {
+
+      width: 400px;
+      padding: 10px;
+    }
+
+
+    button {
+      border-radius: 10px;
+      padding: 15px 30px;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      border: yellowgreen;
+      color: thistle;
+      background: red;
+      box-shadow: 1px 1px 5px 1px #2d2d2d;
+      margin-top: 20px;
+    }
+
+    select {
+      width: 400px;
+      padding: 10px;
+    }
+
+    marquee {
+      color: cyan;
+    }
+  </style>
+
+
+
+</head>
+
+<body>
+
+
+
+
+  <main>
+
+    <marquee> WELCOME TO NIRAJ-SAKHARE RESTAURANT</marquee>
+    <div>
+      <h1>Tip calculator</h1>
+      
+        
+          <label>Bill amount</label>
+          <input type="number" name="" id="bill_amount">
+          <br>
+
+          <label>How was the service?</label>
+          <select id="tip_perc">
+            <option disabled selected>Please select</option>
+            <option value="20">Excellent-20%</option>
+            <option value="10">Medium-10%</option>
+            <option value="5">Not so good-5%</option>
+          </select>
+          <label>How many people are sharing the bill?</label>
+          <input type="number" name="" id="people">
+          <br>
+          <label>Tip total</label>
+          <input type="number" name="" id="tip_total" disabled>
+          <br>
+          <label>Tip amount per person </label>
+          <input type="number" name="" id="bill" disabled>
+
+
+          <button onclick="tipcalcy()"> calculate </button>
+        
+      </from>
+
+
+
+    </div>
+
+  </main>
+
+
+
+  <script>
+
+
+
+
+    const tipcalcy = () => {
+
+      let amount = document.getElementById('bill_amount').value;
+
+      let perc = document.getElementById('tip_perc').value;
+
+      let people = document.getElementById('people').value;
+
+
+      let tip = amount * (perc / 100);
+
+
+      let bill = tip / people;
+
+
+      document.getElementById('tip_total').value = tip;
+
+
+
+      document.getElementById('bill').value = bill;
+
+      
+      
+      
+
+    }
+
+
+
+
+  </script>
+
+
+</body>
+
+</html>
